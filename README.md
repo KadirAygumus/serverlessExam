@@ -20,7 +20,7 @@ $ git remote add origin ...URL of your new repository...
 $ git push origin master
 ~~~
 
-### The App.
+### The App
 
 Deploy the app to your AWS account (cdk deploy).
 
