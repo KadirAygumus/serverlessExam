@@ -1,3 +1,5 @@
+
+
 interface Car {
     make: string;
     color: string;
@@ -10,6 +12,7 @@ interface Car {
     color: string;
     owner: string;
   }
+  export type Transport = Car | Bicycle;
   
   const carpark: Car[] = [
    {
@@ -45,6 +48,7 @@ interface Car {
    },
   ];
   
+
   function getCarMatches(data: Car[], criteria: (t: Car) => boolean): Car[] {
     return data.filter(criteria);
   }
@@ -55,3 +59,9 @@ interface Car {
   ): Bicycle[] {
     return data.filter(criteria);
   }
+
+  function getMatches<T>( data : T[], criteria: (d: T) => boolean ) : T | undefined {
+    return data.find((criteria))
+}
+
+getMatches<Bicycle>(bicycleShed, (b) => b.color == "Blue")

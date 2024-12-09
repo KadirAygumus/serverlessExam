@@ -156,8 +156,7 @@ export class RestAPIStack extends cdk.Stack {
 
     const moviesEndpoint = api.root.addResource("movies");
     const movieEndpoint = moviesEndpoint.addResource("{movieId}");
-    const crewEndpoint = api.root.addResource("crew").addResource("{crewRole}").addResource("movies").addResource("{movieId}");
-   
+    const crewEndpoint = api.root.addResource("crew").addResource("{crewRole}").addResource("movies").addResource("{movieId}").addResource("name");
     crewEndpoint.addMethod(
       "GET",
       new apig.LambdaIntegration(getCrewFn, { proxy: true })
